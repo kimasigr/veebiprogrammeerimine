@@ -50,7 +50,6 @@
 			$ageNotice .= "\n <li>" .$i ."</li> \n";
 		}
 		$ageNotice .= "</ul>";
-		
 	}
 	
 	//teeme tsükli
@@ -66,7 +65,7 @@
 	<meta charset="utf-8">
 	<title>Sigrid Kimask veebiprogrammeerimine</title>
 </head>
-<body>
+<body style =background-color:MISTYROSE;">
 	<h1>
 		<?php
 			echo $myName ." " .$myFamilyName;
