@@ -1,5 +1,5 @@
 <?php
-	require ("functions.php");
+	require("functions.php");
 	
 	//kas pole sisse loginud
 	if(!isset($_SESSION["userId"])){
@@ -7,12 +7,12 @@
 		exit();
 	}
 	
-	//Väljalogimine
+	//väljalogimine
 	if(isset($_GET["logout"])){
 		session_destroy();
 		header("Location: login.php");
 		exit();
-	
+	}
 	$picsDir = "../../pics/";
 	$picFileTypes = ["jpg", "jpeg", "png", "gif"];
 	$picFiles = [];
@@ -40,12 +40,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	
+	<title>Sigrid Kimask veebiprogrammeerimine</title>
 </head>
-<body style =background-color:SEASHELL;">
+<body>
 	<h1>Foto</h1>
-	<p><a href="?logout=1">Logi Välja!</a></p>
-	<img src="<?php echo $picsDir .$picFile; ?>" alt="Tallinna Ülikool">
+	<p>See leht on loodud õppetöö raames ning ei sisalda mingit tõsiseltvõetavat sisu.</p>
+	<p><a href="?logout=1">Logi välja!</a></p>
+	<p><a href="usersinfo.php">Info süsteemi kasutajate kohta.</a></p>
+	<img src="<?php echo $picsDir .$picFile; ?>" alt="Tallinna ülikool">
 	
 </body>
 </html>
