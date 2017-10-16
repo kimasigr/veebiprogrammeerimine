@@ -26,11 +26,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	
+	<title>Sigrid Kimask veebiprogrammeerimine</title>
 </head>
-<body style =background-color:SEASHELL;">
+<body>
 	<h1>Foto</h1>
-	<img src="<?php echo $picsDir .$picFile; ?>" alt="Tallinna Ülikool">
+	<p>See leht on loodud õppetöö raames ning ei sisalda mingit tõsiseltvõetavat sisu.</p>
+	<img src="<?php echo $picsDir .$picFile; ?>" alt="Tallinna ülikool">
 	
 </body>
 </html>
