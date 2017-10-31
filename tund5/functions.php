@@ -1,9 +1,11 @@
 <?php
-	require("config.php");
+	require("../../config.php");
 	
 	
 	$database = "if17_kimasigr";
-	
+	$serverHost = "";
+	$serverUsername = "";
+	$serverPassword = "";
 
 	//alustan sessiooni
 	session_start();
@@ -45,11 +47,10 @@
 	//kasutaja andmebaasi salvestamine
 	function signUp($signupFirstName, $signupFamilyName, $signupBirthDate, $gender, $signupEmail, $signupPassword){
 		//loome andmebaasiühenduse
-		
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		//valmistame ette käsu andmebaasiserverile
 		$stmt = $mysqli->prepare("INSERT INTO vpusers (firstname, lastname, birthDay, gender, email, password) VALUES (?, ?, ?, ?, ?, ?)");
-		echo $mysqli->error;
+		//echo $mysqli->error;
 		//s - string
 		//i - integer
 		//d - decimal
@@ -58,7 +59,7 @@
 		if ($stmt->execute()){
 			echo "\n Õnnestus!";
 		} else {
-			echo "\n Tekkis viga : " .$stmt->error;
+			echo "\n Tekkis viga: " .$stmt->error;
 		}
 		$stmt->close();
 		$mysqli->close();
