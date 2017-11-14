@@ -1,12 +1,11 @@
+
 <?php
-	require("../../config.php");
+	//require("../../config.php");
 	require("functions.php");
 	
-	
-	
 	//kui on sisselogitud, siis otse pealehele
-	if(isset($_SESSION["userid"])){
-		header("Location:main.php");
+	if(isset($_SESSION["userId"])){
+		header("Location: main.php");
 		exit();
 	}
 	
@@ -19,9 +18,7 @@
 	$signupBirthMonth = null;
 	$signupBirthYear = null;
 	$signupBirthDate = "";
-	//$serverHost = "";
-	//$serverUsername = "";
-	//$serverPassword = "";
+	
 	$loginEmail = "";
 	$notice = "";
 	$signupFirstNameError = "";
@@ -246,4 +243,5 @@
 	</form>
 		
 </body>
+</html>
 </html>

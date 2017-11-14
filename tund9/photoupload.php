@@ -38,7 +38,7 @@
 			$timeStamp = microtime(1) * 10000;
 		
 			//fikseerin nime
-			$target_file = $target_dir . pathinfo(basename($_FILES["fileToUpload"]["name"]))["filename"] ." _" .$timeStamp .".";$imageFileType;
+			$target_file = $target_dir . pathinfo(basename($_FILES["fileToUpload"]["name"]))["filename"] ." _" .$timeStamp .".".$imageFileType;
 			
 			//Kas on pildi failitüüp
 			$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -111,7 +111,7 @@
 				//lisame teksti
 				$textToImage = "Heade mõtete veeb";
 				$textColor = imagecolorallocatealpha($myImage,255,255,255,60);//0...127
-				imagettftext($myImage, 20, -45, 10, 25, $textColor, "../../graphics/ARIAL.TTF", $textToImage);
+				imagettftext($myImage, 20, -45, 10, 25, $textColor, "../../graphics/arial.ttf", $textToImage);
 				
 				//faili salvestamine
 				if($imageFileType == "jpg" or $imageFileType == "jpeg"){

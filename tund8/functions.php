@@ -99,6 +99,7 @@
 	}
 	
 	function latestIdea(){
+		//var_dump($GLOBALS);
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		$stmt = $mysqli->prepare("SELECT idea FROM vpuserideas WHERE id = (SELECT MAX(id) FROM vpuserideas WHERE deleted IS NULL)");
 		$stmt->bind_result($idea);
